@@ -1,6 +1,6 @@
 # README
 *Our first project*
-secon change
+second change
 
 SOME CHANGES
 
