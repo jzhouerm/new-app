@@ -4,6 +4,11 @@
       <div>
       <h2><%= link_to event.name, event_path(event) %> </h2>
       <img src="<%= event.img_url %>" alt="<% event.name %>" style= "width:60px; height:60px; ">
+      <form method="Delete" action="/registrations/destroy" class="button_to">
+      <input value="Unredister" type="submit" />
+      </form> 
+      
+     
       </div>
       <% end %>
 
@@ -12,7 +17,10 @@
         <h2><%= link_to event.name, event_path(event) %> </h2>
         <img src="<%= event.img_url %>" alt="<% event.name %>" style= "width:60px; height:60px; ">
         <%= link_to "Edit event", edit_event_path(event) %>
-         # <%= link_to "Destroy", registration, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= button_to 'delete', event_path(event), method: :delete %> 
+        # delete button is not working #
+
+        
         <%end%>
         
      
