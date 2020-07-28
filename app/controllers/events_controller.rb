@@ -51,7 +51,7 @@ end
    private 
 
    def event_params
-   params.require(:event).permit(:name, :date, :location_id, :description, :user_id, :interest_id, :img_url)
+   params.require(:event).permit(:name, :date, :location_id, :description, :user_id, :interest_id, :img_url, :search)
    end
 
    def require_login

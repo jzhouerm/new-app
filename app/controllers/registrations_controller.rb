@@ -16,6 +16,11 @@ class RegistrationsController < ApplicationController
     end
     end
 
+    def destroy 
+        @registration = Registration.find(params[:id])
+        @registration.destroy 
+    end
+
     private 
     def registration_params
     params.require(:registration).permit(:user_id, :event_id) 
