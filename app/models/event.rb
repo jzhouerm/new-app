@@ -12,7 +12,18 @@ class Event < ApplicationRecord
     validates :description, presence: true, length: { minimum: 20 }
     validates :interest_id, presence: true
     
+    def self.search(search)
+        if search 
+            location = Location.find_by(city: search)
+            if location 
+                self.where(location_id: location)
+            else
+                @events = Event.all 
+            end
+        else
+            @events = Event.all 
+        end
+    end
 
- 
     
 end
