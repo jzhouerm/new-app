@@ -4,7 +4,8 @@ class EventsController < ApplicationController
     # disabled it, so we can have access without login while working and testing
  
 def index 
-    @events = Event.all
+    # @events = Event.all
+    @events = Event.search(params[:search])
 end
 
     def show

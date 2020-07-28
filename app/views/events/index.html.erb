@@ -1,4 +1,12 @@
-<h1>Welcome to So'Mate!</h1>
+<h1>Mixer Meet!</h1>
+<h5>Meet new friends and explore </h5>
+<h4>Search for fun In-peron or Online Events:</h4>
+<%= form_tag(events_path, method: :get) do %>
+<%= text_field_tag(:search, params[:search]) %>
+<%= submit_tag ("Search by City") %>
+<% end %>
+
+<!-- END OF SEARCH BAR -->
 
 <% @events.each do |event|%>
 <p><%= link_to event.name, event_path(event) %></p>
