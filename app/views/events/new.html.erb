@@ -1,0 +1,27 @@
+
+<h1>You are creating a new Event: </h1>
+<% if @errors %>
+    <% @errors.each do |error| %> 
+        <%= error %> <br>
+        <% end %>
+        <% end %> 
+        <br>
+        <br>
+   
+        <%= form_for @event do |f| %>
+         <%= f.label :name %>
+        <%= f.text_field :name%>  
+        <%= f.label "Date and time (format: mm-dd-yyyy, hh:mm)" %> 
+        <%= f.text_field :date %> 
+        <%= f.label :location %>
+        <%= f.collection_select :location_id, Location.all, :id, :city %> 
+        <%= f.label :description %>
+        <%= f.text_field :description %> 
+        <%= f.label :interest %>
+        <%= f.collection_select :interest_id, Interest.all, :id, :name %> 
+        <%= f.label :img_url %>
+        <%= f.text_field :img_url %>  <br> 
+        <%= f.label :user %>
+        <%= f.collection_select :user_id, User.all, :id, :name %> <br>
+        <%= f.submit "Register" %>
+        <% end %>

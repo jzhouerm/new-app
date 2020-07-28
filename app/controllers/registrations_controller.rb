@@ -6,8 +6,14 @@ class RegistrationsController < ApplicationController
     end
 
     def create 
-@registration=Registration.create(registration_params)
-redirect_to event_path(@registration.event_id)
+        @registration=Registration.create(registration_params)
+
+     if @registration.valid?
+        redirect_to event_path(@registration.event_id)
+     else 
+        @errors = @registration.errors.full_messages 
+        render :new
+    end
     end
 
     private 
