@@ -4,11 +4,22 @@
 <h4>Event Details: <%= @event.description %></h4>
 <h4>Event Category: <%= link_to @event.interest.name, interests_path %></h4>
 <h4>Event Date: <%= @event.date.strftime("%B %d, %Y at %k:%M") %></h4>
-<h4>Event Name: <%= image_tag @event.img_url %></h4>
+<%= image_tag @event.img_url  %>
+<p> Event created by: <%= link_to @event.user.name, user_path(@event.user)%>
+<img src="<%= @event.user.img_url %>" alt="<% @event.user %>" style= "width:60px; height:60px;" > 
 
 <h4>Attendees:</h4>
 <% @registrations.each do |reg| %>
 <p><%= link_to reg.user.name, user_path(reg.user) %></p>
 <% end%>
+
+
+<form method="get" action="/registrations/new" class="button_to">
+ <input value="Register" type="submit" />
+</form> 
+
+
+
+
 
 <%# interest, description, date, list of users attending, link to interest index page, owner of this event can delete, option to add event %>
