@@ -1,0 +1,10 @@
+<h1><%= @user.name %> </h1>
+<h3> All events that user created: </h3><br>
+<% @user.events.each do |event| %>
+    <div>
+     <%= link_to event.name, event_path(event) %> </p>
+    <img src="<%= event.img_url %>" alt="<% event.name %>" style= "width:60px; height:60px; ">
+    </div>
+     <br>
+     <% end %>
+     
