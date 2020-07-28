@@ -8,3 +8,5 @@ Yulia
 
 Jules 
 - Events - controller and views, show page
+
+ YULIA FIRST COMMIT at 8.38 

@@ -1,0 +1,6 @@
+<h1> All users: </h1><br>
+<% @users.each do |user| %> <br>
+    <%= link_to user.name, user_path(user) %> <br>
+    <img src="<%= user.img_url %>" alt="<% user.name %>" style= "width:100px; height:100px; border:10;"> <br>
+    <% end %>
+    
