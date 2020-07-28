@@ -11,7 +11,7 @@ class Event < ApplicationRecord
     validates :location_id, presence: true
     validates :description, presence: true, length: { minimum: 20 }
     validates :interest_id, presence: true
-    validates :img_url, presence: true
+    
 
  
     

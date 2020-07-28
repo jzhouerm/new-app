@@ -1,13 +1,21 @@
 <h1><%= @user.name %> </h1>
-<h3> All events that user created: </h3><br>
-<% @user.events.each do |event| %>
-    <div>
-     <%= link_to event.name, event_path(event) %> </p>
-     <img src="<%= event.img_url %>" alt="<% event.name %>" style= "width:60px; height:60px; ">
-     <%= button_to "Delete" %>
+<h2> All events that you are registered for: </h2><br>
+      <% @user.events.each do |event| %>
+      <div>
+      <h2><%= link_to event.name, event_path(event) %> </h2>
+      <img src="<%= event.img_url %>" alt="<% event.name %>" style= "width:60px; height:60px; ">
+      </div>
+      <% end %>
 
+<h2> All events that you created: </h2><br>
+        <% @created_events.each do | event | %>
+        <h2><%= link_to event.name, event_path(event) %> </h2>
+        <img src="<%= event.img_url %>" alt="<% event.name %>" style= "width:60px; height:60px; ">
+        <%= link_to "Edit event", edit_event_path(event) %>
+         # <%= link_to "Destroy", registration, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%end%>
+        
      
-    </div>
-     <br>
-     <% end %>
+    
+    
      
