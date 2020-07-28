@@ -1,9 +1,9 @@
 <h1>You are about to register for an event. Please verify all information below: </h1>
 
-    <%= form_for @registration do |f| %>s
-        <%= f.label :user_id %>
-        <%= f.number_field :user_id %>
-        <%= f.label :event_id %>
-        <%= f.number_field :event_id %>
-        <%= f.submit %>
+    <%= form_for @registration do |f| %>
+        <%= f.label :user %>
+        <%= f.collection_select :user_id, User.all, :id, :name%>
+        <%= f.label :event %>
+        <%= f.collection_select :event_id, Event.all, :id, :name %>
+        <%= f.submit "Register" %>
         <%end %>
