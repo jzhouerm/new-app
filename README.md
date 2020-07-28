@@ -8,3 +8,6 @@ Yulia
 
 Jules 
 - Events - controller and views, show page
+
+
+Jules 7-27 8:45PM 
