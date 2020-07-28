@@ -1,2 +1,14 @@
 <h1>Events Show Page</h1>
 
+<h4>Event Name: <%= @event.name %></h4>
+<h4>Event Details: <%= @event.description %></h4>
+<h4>Event Category: <%= link_to @event.interest.name, interests_path %></h4>
+<h4>Event Date: <%= @event.date.strftime("%B %d, %Y at %k:%M") %></h4>
+<h4>Event Name: <%= image_tag @event.img_url %></h4>
+
+<h4>Attendees:</h4>
+<% @registrations.each do |reg| %>
+<p><%= link_to reg.user.name, user_path(reg.user) %></p>
+<% end%>
+
+<%# interest, description, date, list of users attending, link to interest index page, owner of this event can delete, option to add event %>
