@@ -12,9 +12,12 @@
 
 
     <%= form_for @registration do |f| %>
-        <%= f.label :user %>
-        <%= f.collection_select :user_id, User.all, :id, :name%>  
         <%= f.label :event %>
         <%= f.collection_select :event_id, Event.all, :id, :name %>
         <%= f.submit "Register" %>
         <%end %>
+
+        <!-- LINES REMOVED - REPLACED W/ @CURRENT_USER
+        < f.label :user %>
+        < f.collection_select :user_id, User.all, :id, :name%>  
+        -->

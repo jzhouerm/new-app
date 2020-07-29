@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
-    # before_action :require_login
-    # skip_before_action :require_login, only: [:index, :show] 
+    before_action :require_login
+    skip_before_action :require_login, only: [:index] 
     # disabled it, so we can have access without login while working and testing
  
 def index 
@@ -18,16 +18,28 @@ end
         @event = Event.new
     end
 
-
     def create 
     @event = Event.create(event_params)
+    
     if @event.valid?
+        @event.user_id = @current_user.user_id 
         redirect_to event_path(@event) 
+        byebug
     else 
         @errors = @event.errors.full_messages
         render :new
     end
     end
+
+    # def create 
+    # @event = Event.create(event_params)
+    # if @event.valid?
+    #     redirect_to event_path(@event) 
+    # else 
+    #     @errors = @event.errors.full_messages
+    #     render :new
+    # end
+    # end
 
     def edit 
         @event = Event.find(params[:id])
