@@ -4,11 +4,8 @@
       <div>
       <h2><%= link_to event.name, event_path(event) %> </h2>
       <img src="<%= event.img_url %>" alt="<% event.name %>" style= "width:60px; height:60px; ">
-      <form method="Delete" action="/registrations/destroy" class="button_to">
-      <input value="Unredister" type="submit" />
-      </form> 
-      
-     
+     <% registration_for_delition = event.registrations.select {|reg| reg.user_id == @user.id} %>
+      <%= button_to 'Unregister', registration_path(registration_for_delition), method: :delete %> 
       </div>
       <% end %>
 
@@ -16,11 +13,9 @@
         <% @created_events.each do | event | %>
         <h2><%= link_to event.name, event_path(event) %> </h2>
         <img src="<%= event.img_url %>" alt="<% event.name %>" style= "width:60px; height:60px; ">
-        <%= link_to "Edit event", edit_event_path(event) %>
-        <%= button_to 'delete', event_path(event), method: :delete %> 
+        <%= link_to "Edit Event", edit_event_path(event) %>
+        <%= button_to 'Delete Event', event_path(event), method: :delete %> 
         # delete button is not working #
-
-        
         <%end%>
         
      

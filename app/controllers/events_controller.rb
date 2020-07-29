@@ -43,11 +43,11 @@ end
             render :edit
         end 
 
-        def destroy
-            @event = Event.find(params[:id])
-            @event.destroy 
-            redirect_to events_path
-        end
+    def destroy
+        
+         event.destroy 
+        redirect_to events_path
+    end
     end
 
    private 

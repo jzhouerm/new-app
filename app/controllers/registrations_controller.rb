@@ -19,6 +19,7 @@ class RegistrationsController < ApplicationController
     def destroy 
         @registration = Registration.find(params[:id])
         @registration.destroy 
+        redirect_to user_path(@registration.user_id)
     end
 
     private 
