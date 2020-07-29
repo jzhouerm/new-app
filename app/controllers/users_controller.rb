@@ -13,9 +13,6 @@ class UsersController < ApplicationController
         @events = Event.all
         @created_events = @events.select { |event|  event.user_id == @user.id } 
 
-       
-       # @registration=@user.registrations.find { |reg| reg.event_id == self.id}
-        
     end
 
     def create
