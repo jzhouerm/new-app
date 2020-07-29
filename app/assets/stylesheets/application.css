@@ -32,5 +32,11 @@
                 float: left;}
 
     .event-description {overflow: auto;}
+
+    .city { padding-left: 500px; 
+            padding-top: 40px;
+           font-size: 100px;}
+
+     a { text-decoration: none;}
     
 

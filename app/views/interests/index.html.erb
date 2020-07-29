@@ -1,7 +1,7 @@
-<h1> What is your interests: </h1><br>
+<h1> What are you interested in? </h1><br>
 
 <% @interests.each do |interest| %>
-    <%= link_to interest.name, interest_path(interest) %> 
-    <p> Description: <%= interest.description %> </p> <br>
+    <h2><%= link_to interest.name, interest_path(interest) %> </h2>
+    <h4> Description: <%= interest.description %> </h4> <br>
     <% end %>
     
