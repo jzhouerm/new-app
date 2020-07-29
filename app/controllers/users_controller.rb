@@ -10,7 +10,12 @@ class UsersController < ApplicationController
 
     def show 
         @user = User.find(params[:id])
-        @created_events=@user.events.select { |event|  event.user_id == @user.id } 
+        @events = Event.all
+        @created_events = @events.select { |event|  event.user_id == @user.id } 
+
+       
+       # @registration=@user.registrations.find { |reg| reg.event_id == self.id}
+        
     end
 
     def create

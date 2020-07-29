@@ -6,7 +6,7 @@
         <% end %> 
         <br>
         <br>
-        
+
         <%= form_for @event do |f| %>
         <%= f.label :name %>
         <%= f.text_field :name%>  
@@ -22,3 +22,6 @@
         <%= f.text_field :img_url %>  <br>
         <%= f.submit "SUBMIT" %>
         <% end %>
+        <br>
+
+        <%= button_to 'Delete Event', event_path(@event), method: :delete %> 
