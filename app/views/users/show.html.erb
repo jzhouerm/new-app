@@ -8,15 +8,19 @@
       <%= button_to 'Unregister', registration_path(registration_for_delition), method: :delete %> 
       </div>
       <% end %>
+      <br>
 
 <h2> All events that you created: </h2><br>
         <% @created_events.each do | event | %>
         <h2><%= link_to event.name, event_path(event) %> </h2>
         <img src="<%= event.img_url %>" alt="<% event.name %>" style= "width:60px; height:60px; ">
         <%= link_to "Edit Event", edit_event_path(event) %>
-        <%= button_to 'Delete Event', event_path(event), method: :delete %> 
-        # delete button is not working #
+
+        <%= button_to 'Delete Event', event_path(event), method: :delete %>
         <%end%>
+
+      
+        
         
      
     

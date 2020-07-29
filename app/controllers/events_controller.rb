@@ -42,13 +42,15 @@ end
             @errors = @event.errors.full_messages
             render :edit
         end 
+    end
 
     def destroy
-        
-         event.destroy 
-        redirect_to events_path
+         @event = Event.find(params[:id])
+         @event.destroy 
+        redirect_to user_path(@event.user_id)
     end
-    end
+
+    
 
    private 
 
