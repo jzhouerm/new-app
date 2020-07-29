@@ -16,13 +16,16 @@ puts "seeds destroyed..."
 
 5.times do 
 
-User.create({name: Faker::Name.name, email: Faker::Internet.email, img_url: "https://tcap.pbworks.com/f/1435170280/myAvatar.png"})
-Location.create({city: Faker::Nation.capital_city})
-Interest.create({name: Faker::Game.genre, description: nil})
+User.create({name: Faker::Name.name, email: Faker::Internet.email, img_url: "https://tcap.pbworks.com/f/1435170280/myAvatar.png", password: "123"})
+Location.create({city: Faker::Address.city})
+Interest.create({name: Faker::Game.genre, description: "N/A"})
 end
 
 puts "user,location, interest seeds created..."
 
+User.create({name: "Yuliya", email: "yuliya@email.com", img_url: "https://tcap.pbworks.com/f/1435170280/myAvatar.png", password: "123"})
+User.create({name: "Jules", email: "jules@email.com", img_url: "https://tcap.pbworks.com/f/1435170280/myAvatar.png", password: "123"})
+User.create({name: "1", email: "1", img_url: "https://tcap.pbworks.com/f/1435170280/myAvatar.png", password: "1"})
 20.times do
 Event.create({name: Faker::Game.platform, date: Faker::Date.in_date_period, location_id: Location.all.sample.id, description: nil, user_id: User.all.sample.id, interest_id: Interest.all.sample.id, img_url: "https://www.brainfacts.org/-/media/Brainfacts2/Icons-3,-d-,0/Activity_Icon.png"})
 Registration.create({event_id: Event.all.sample.id, user_id: User.all.sample.id})    
