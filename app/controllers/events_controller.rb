@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
-    before_action :require_login
-    skip_before_action :require_login, only: [:index] 
+
+    skip_before_action :authorized, only: [:index, :logged_in] 
  
 def index 
     @events = Event.search(params[:search])
@@ -66,10 +66,6 @@ end
 
    def event_params
    params.require(:event).permit(:name, :date, :location_id, :description, :user_id, :interest_id, :img_url, :search)
-   end
-
-   def require_login
-   redirect_to  unless session.include? :user_id
    end
 
 end
