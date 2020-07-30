@@ -2,9 +2,10 @@
 <p style="color: red;"><%= flash[:my_errors] %></p>
 <% end %>
 
-<h1><%= @user.name %> </h1>
+<h1><%= @current_user.name %> </h1>
+<%= @current_user.img_url %> 
 <h2> All events that you are registered for: </h2><br>
-      <% @user.events.each do |event| %>
+      <% @current_user.events.each do |event| %>
       <div>
       <h2><%= link_to event.name, event_path(event) %> </h2>
       <img src="<%= event.img_url %>" alt="<% event.name %>" style= "width:60px; height:60px; ">

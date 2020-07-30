@@ -2,7 +2,9 @@
    .background  {
             background-image: url(logo1.jpg); 
             background-repeat: no-repeat;
-            height: 630px;
+            box-sizing: 50%;      
+            height: 500px;
+            background-size: 1500px 500px ;
             border: 2px, solid, black;  
    }
    
@@ -17,14 +19,22 @@
            text-decoration: none;
    }
 
-   .nav-bar { display: inline;   margin: 10px; margin: 10;
-    padding: 0;}
+   .nav-bar { display: inline;   
+            margin: 10px; 
+            padding: 0;}
+
+    #welcome {display: inline;   
+        margin: 10px; 
+        padding: 10px ;
+        font-size: 40px;
+        font-weight: bold;
+         color: red;}
 
    li a { background-color: rgb(233, 230, 230);} 
 
    input {padding: 10px; margin: 20px; border: 2px solid black;}
 
-   input[type=submit] { padding: 10px; margin: 20px;  border-radius: 15px; } 
+   input[type=submit] { padding: 10px; margin: 20px;  border-radius: 10px; font-size: 20px ;} 
 
     .avatar {width: 60px; height: 60px;}
 

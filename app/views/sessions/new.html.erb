@@ -1,50 +1,25 @@
-<br/>
-<br/>
-<br/>
-<div class="columns">
-    <div class="column"></div>
-    <div class="column">
-        <div class="box">
-              Please log in to view your events.
-          <%= form_tag @sessions do %>
-            <div class="field">
-              <p class="control has-icons-left">
-                <label class="label">Email</label>
-                <input class="input" type= "text" 
-                  <%= text_field_tag :email %>
-              </p>
-            </div>
-            <div class="field">
-              <p class="control has-icons-left">
-                <label class="label">Password</label>
-                <input class="input" type= "password" 
-                  <%= password_field_tag :password %> 
-              </p>
-            </div>            
 
-            <% if @errors %>
-                <p class="has-text-centered	has-text-danger	">
-                    <p style="color: red;"><%= @errors %></p>
-                </p>
-            <% end %>
-            
-            <div class="field actions">
-              <p class="control">
-                <button class="button">
-                  <% submit_tag%> Login 
-                </button>
-              </p>
-              <br/>
-<<<<<<< HEAD
-              <h4>If you don't have an account:  <%= link_to "Sign up", signup_path %></h4>
-=======
-              <p>If you don't have an account: <%= link_to "Sign Up", signup_path %></p>
->>>>>>> master
-            </div>
-          <% end %>
-        </div>
-    </div>
-    <div class="column"></div>
-</div>
 
+
+<h3>Please log in to view your events.<h3>
+      <%= form_tag @sessions do %>
+      <label>Email</label>
+      <%= text_field_tag :email %><br>
+
+      <label >Password</label>
+      <%= password_field_tag :password %> <br>
+             
+      <label >Password Confirmation: </label>
+      <%= password_field_tag :password %> <br>
+
+      <% if flash[:errors] %>
+      <p style="color: red;"><%= flash[:errors] %></p>
+      <%end%>
+
+      <%= submit_tag "Login" %> 
+      <%end%>      
+    
+<h4>If you don't have an account:  <%= link_to "Sign up", signup_path %></h4>
+
+    
  
