@@ -2,42 +2,32 @@ class EventsController < ApplicationController
 
     skip_before_action :authorized, only: [:index, :logged_in] 
  
-def index 
+    def index 
     @events = Event.search(params[:search])
-end
+    end
 
     def show
     @event = Event.find(params[:id])
     @registrations = @event.registrations.each do |reg| reg.user.name
+        end
     end
-end
 
     def new 
         @event = Event.new
     end
 
     def create 
+
         @event = Event.create(event_params)
+        if @event.valid?
         
-    if @event.valid?
-        @event.user_id = @current_user.user_id 
         redirect_to event_path(@event) 
 
-    else 
+        else 
         @errors = @event.errors.full_messages
         render :new
+        end
     end
-    end
-
-    # def create 
-    # @event = Event.create(event_params)
-    # if @event.valid?
-    #     redirect_to event_path(@event) 
-    # else 
-    #     @errors = @event.errors.full_messages
-    #     render :new
-    # end
-    # end
 
     def edit 
         @event = Event.find(params[:id])
