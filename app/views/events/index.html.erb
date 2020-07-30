@@ -1,5 +1,5 @@
 
-<h5>Meet new friends and explore new events happening now!</h5>
+<h3>Meet new friends and explore new events happening now!</h3>
 <h4>Search for fun In-person or Online Events:</h4>
 <%= form_tag(events_path, method: :get) do %>
 <%= text_field_tag(:search, params[:search]) %>
@@ -7,8 +7,11 @@
 <% end %>
 
 <!-- END OF SEARCH BAR -->
-
+<div class="grid-container">
 <% @events.each do |event|%>
+<div class="grid-item">
 <p><%= link_to event.name, event_path(event) %></p>
 
+</div>
 <% end %>
+</div>
