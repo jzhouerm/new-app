@@ -24,7 +24,7 @@
 
       <% if @current_user %>
       <li class="nav-bar"> <a href= "/users/@current_user.id"> My Events </a></li>
-      <li class="nav-bar"> <a href="Logout"> Log out</a></li>
+      <li class="nav-bar"> <%= link_to 'Logout', logout_path %></li>
       <li  id="welcome"> Welcome <%= @current_user.name %>!</li>
 
       <% else %>

@@ -21,17 +21,6 @@ class UsersController < ApplicationController
         redirect_to login_path
         end
 
-        # @user = User.find_by(id: params[:id])
-        
-        # @events = Event.all
-        # @created_events = @events.select { |event|  event.user_id == @user.id } 
-    
-        # if @user == @current_user
-            
-        # else 
-        #     flash[:my_errors] = "Please log in to view your profile."
-        #     redirect_to login_path
-        # end
     end
 
     def create
