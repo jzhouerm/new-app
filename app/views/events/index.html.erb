@@ -7,12 +7,12 @@
 <% end %>
 
 <!-- END OF SEARCH BAR -->
+
 <div class="grid-container">
 <% @events.each do |event|%>
 <div class="grid-item">
-<p><%= link_to event.name, event_path(event) %></p>
-<img class="grid-item" src="<%= event.img_url %>" alt="<% event.name %>" >
-
+<div><%= link_to event.name, event_path(event) %></div>
+<img  class="img" src="<%= event.img_url %>" alt="<% event.name %>" >
 </div>
 <% end %>
 </div>
