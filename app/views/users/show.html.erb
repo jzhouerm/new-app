@@ -9,8 +9,11 @@
       <div>
       <h2><%= link_to event.name, event_path(event) %> </h2>
       <img src="<%= event.img_url %>" alt="<% event.name %>" style= "width:60px; height:60px; ">
+
+
      <% registration_for_deletion = event.registrations.select {|reg| reg.user_id == @current_user.id} %>
       <%= button_to 'Unregister', registration_path(registration_for_deletion), method: :delete %> 
+
       </div>
       <% end %>
       <br>
