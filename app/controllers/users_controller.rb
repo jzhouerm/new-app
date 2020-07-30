@@ -12,10 +12,11 @@ class UsersController < ApplicationController
 
     def show 
 
-        @user = User.find_by(params[:id])
+        @user = User.find_by(id: params[:id])
         
         @events = Event.all
         @created_events = @events.select { |event|  event.user_id == @user.id } 
+    
         if @user == @current_user
             render :show 
         else 
