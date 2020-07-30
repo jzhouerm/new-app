@@ -4,15 +4,15 @@
     <div class="column">
         <div class="box">
             <div class="content">
-                <h5 class="title is-5 has-text-link has-text-centered is-italic has-text-weight-bold is-family-code">
-                    So'Mate
-                </h5> 
+                <h4 class="title is-5 has-text-link has-text-centered is-italic has-text-weight-bold is-family-code">
+                    Please enter information below to start joining and creating events on So'Mate!
+                </h4> 
                         <!-- Content -->
                         <%= form_for @user do |f| %>
-                            <% if @errors %>
-                                <%@errors.map do |error|%>
+                            <% if flash[:errors] %>
+                                <%flash[:errors].map do |error|%>
                                     <p class="has-text-centered	has-text-danger	">
-                                        <%= error %>
+                                        <p style="color: red;"><%= error %></p>
                                     </p>
                                 <%end%>
                             <% end %>
