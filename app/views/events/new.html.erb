@@ -22,7 +22,9 @@
         <%= f.collection_select :interest_id, Interest.all, :id, :name %> 
         <%= f.label :img_url %>
         <%= f.text_field :img_url %>  <br> 
-        <%=f.submit "Register"%>
+        <%= f.label :user %>
+        <%= f.collection_select :user_id, User.all.select {|cu| cu.id == @current_user.id}, :id, :name %>
+        <%=f.submit "Create Event"%>
         <% end %>
         <br> <br> <br><br> <br> <br> 
 
@@ -30,4 +32,4 @@
         <!-- LINES DELETED
         f.label :user
         f.collection_select :user_id, User.all, :id, :name
-             f.submit "Register" -->
+    
