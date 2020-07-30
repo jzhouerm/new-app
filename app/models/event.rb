@@ -7,7 +7,7 @@ class Event < ApplicationRecord
 
 
     validates :name, presence: true, uniqueness: { scope: :location_id,
-    message: 'Event with the same name is already exist'}
+    message: 'Event with the same name already exists'}
     validates :location_id, presence: true
     validates :interest_id, presence: true
     

@@ -1,3 +1,7 @@
+<% if flash[:my_errors]%>
+<p style="color: red;"><%= flash[:my_errors] %></p>
+<% end %>
+
 <h1><%= @user.name %> </h1>
 <h2> All events that you are registered for: </h2><br>
       <% @user.events.each do |event| %>
