@@ -51,9 +51,11 @@
 
      a { text-decoration: none;}
 
-     .grid-container { 
-        display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));}
-        /*grid-template-colums: {auto auto auto auto; flex-wrap: wrap;}*/
-    .grid-item {padding:15px}
+     .grid-container { display: grid; 
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));}
+      
+    .grid-item {padding: 15px;}
+    .img {width: 200px; height: 200px;}
+                           
     
 
