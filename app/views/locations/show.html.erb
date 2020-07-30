@@ -1,14 +1,11 @@
-<h1><%= @location.city %> </h1>
+<div class="city"><%= @location.city %> </div>
 
-<% @location.events.each do |event| %>
-   <div>
-    <p> Event Name:  <%= link_to event.name, event_path(event) %> </p> <br>
+    <% @location.events.each do |event| %>
+   
+    <h2> <%= link_to event.name, event_path(event) %> </h2> <br>
     <img src="<%= event.img_url %>" alt="<% event.name %>" style= "width:100px; height:100px; border:10;">
-     <p> When: <%= event.date %>
-     <p> Description: <%= event.description %>
-     <p> Created by: <%= event.user.name %>
-     </div>
-     
+     <h3> Date: <%= event.date %> </h3>
+     <h4> Description: <%= event.description %></h4>
      <br>
      <% end %>
      

@@ -11,18 +11,27 @@ class UsersController < ApplicationController
     end
 
     def show 
-
-        @user = User.find_by(id: params[:id])
-        
         @events = Event.all
-        @created_events = @events.select { |event|  event.user_id == @user.id } 
-    
-        if @user == @current_user
-            render :show 
+        @created_events = @events.select { |event|  event.user_id == current_user.id } 
+
+        if current_user
+        render :show 
         else 
-            flash[:my_errors] = "Please log in to view your profile."
-            redirect_to login_path
+        flash[:my_errors] = "Please log in to view your profile."
+        redirect_to login_path
         end
+
+        # @user = User.find_by(id: params[:id])
+        
+        # @events = Event.all
+        # @created_events = @events.select { |event|  event.user_id == @user.id } 
+    
+        # if @user == @current_user
+            
+        # else 
+        #     flash[:my_errors] = "Please log in to view your profile."
+        #     redirect_to login_path
+        # end
     end
 
     def create

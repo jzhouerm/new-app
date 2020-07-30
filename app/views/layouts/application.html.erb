@@ -16,21 +16,21 @@
   <ul  class="navigation"> 
 
 
-      <li class="nav-bar"> <a href="/login" > LogIn </a> </li>
+      
       <li class="nav-bar"> <a href="/interests" > Look up by interest </a></li>
       <li class="nav-bar"> <a href="/locations" > All  locations </a></li>
       <li class="nav-bar"> <a href="/events" > Events </a></li> 
       <li class="nav-bar"> <a href="/events/new"> Create an Event</a> </li>
-      <li class="nav-bar"> <a href= user/@current_user > Your Profile </a></li>
-
 
       <% if @current_user %>
-        <li class='right'>Welcome <%= @current_user.name %>!!!</li>
-        <li class='right'><%= link_to "Log-out", logout_path, method: :delete %></li>
-      <% else %>
-        <li class='right'><%= link_to 'Sign-up', new_user_path %></li>
-        <li class='right'><%= link_to 'Login', new_session_path %></li>
+      <li class="nav-bar"> <a href= "/users/@current_user.id"> My Events </a></li>
+      <li class="nav-bar"> <a href="Logout"> Log out</a></li>
+      <li  id="welcome"> Welcome <%= @current_user.name %>!</li>
 
+      <% else %>
+      <li class="nav-bar"><%= link_to 'Sign up', new_user_path %></li>
+      <li class="nav-bar"><%= link_to 'Login', new_session_path %></li>
+      
       <% end %>
 
 
