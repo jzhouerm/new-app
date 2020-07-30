@@ -5,11 +5,12 @@
         <%= error %> <br>
         <% end %>
         <% end %> 
+
         <br>
         <br>
    
         <%= form_for @event do |f| %>
-         <%= f.label :name %>
+         <%= f.label :name , "Event Name"%>
         <%= f.text_field :name%>  
         <%= f.label "Date and time (format: mm-dd-yyyy, hh:mm)" %> 
         <%= f.text_field :date %> 
@@ -21,7 +22,12 @@
         <%= f.collection_select :interest_id, Interest.all, :id, :name %> 
         <%= f.label :img_url %>
         <%= f.text_field :img_url %>  <br> 
-        <%= f.label :user %>
-        <%= f.collection_select :user_id, User.all, :id, :name %> <br>
-        <%= f.submit "Register" %>
+        <%=f.submit "Register"%>
         <% end %>
+        <br> <br> <br><br> <br> <br> 
+
+
+        <!-- LINES DELETED
+        f.label :user
+        f.collection_select :user_id, User.all, :id, :name
+             f.submit "Register" -->
