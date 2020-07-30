@@ -2,15 +2,18 @@
 <p style="color: red;"><%= flash[:my_errors] %></p>
 <% end %>
 
-<h1><%= @current_user.name %> </h1>
-<%= @current_user.img_url %> 
+<h1><%= "#{@current_user.name}'s Events" %> </h1>
+<img src="<%= @current_user.img_url %>" alt="" style= "width:60px; height:60px; ">
 <h2> All events that you are registered for: </h2><br>
       <% @current_user.events.each do |event| %>
       <div>
       <h2><%= link_to event.name, event_path(event) %> </h2>
       <img src="<%= event.img_url %>" alt="<% event.name %>" style= "width:60px; height:60px; ">
-     <% registration_for_delition = event.registrations.select {|reg| reg.user_id == @current_user.id} %>
-      <%= button_to 'Unregister', registration_path(registration_for_delition), method: :delete %> 
+
+
+     <% registration_for_deletion = event.registrations.select {|reg| reg.user_id == @current_user.id} %>
+      <%= button_to 'Unregister', registration_path(registration_for_deletion), method: :delete %> 
+
       </div>
       <% end %>
       <br>
