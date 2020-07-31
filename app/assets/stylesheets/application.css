@@ -3,34 +3,50 @@
             background-image: url(logo1.jpg); 
             background-repeat: no-repeat;
             box-sizing: 50%;      
-            height: 500px;
-            background-size: 1500px 500px ;
+            height: 450px;
+            background-size: 1350px 450px ;
             border: 2px, solid, black;  
+            background-color: rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.927);
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 0px;
    }
    
 
    .navigation {
+        -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+        -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+        box-shadow: 0 0 10px rgba(0,0,0,.3);
            list-style-type: none;
-           float: left;
+           float: center;
            text-align: center;
            font-size: 25px;  
            margin: 0;
            padding: 50;
            text-decoration: none;
+           border-radius: 20px;
    }
 
    .nav-bar { display: inline;   
             margin: 10px; 
             padding: 0;}
 
+
     #welcome {display: inline;   
         margin: 10px; 
         padding: 10px ;
-        font-size: 40px;
+        font-size: 30px;
         font-weight: bold;
-         color: red;}
+        font-style: italic;
+         color: #B22222;}
 
-   li a { background-color: rgb(233, 230, 230);} 
+        /* Nav bar buttons*/
+   li a:hover { background-color: rgb(188, 129, 129);
+        border-radius: 25px;
+        transition-duration: 0.5s;} 
 
    input {padding: 10px; margin: 20px; border: 2px solid black;}
 
@@ -41,13 +57,16 @@
     .event-pic {width: 500px; 
                 height: 400px;
                 padding: 20px;
-                float: left;}
+                float: left;
+                background-color: rgba(255, 255, 255, 0.5);
+                 max-width: 90%;
+                 height: 90%;}
 
-    .event-description {overflow: auto;}
+    .event-description {overflow: auto; font-family: Arial, Helvetica, sans-serif; font-size: 12px;}
 
     .city { padding-left: 500px; 
             padding-top: 40px;
-           font-size: 100px;}
+           font-size: 80px;}
 
      a { text-decoration: none;}
 
@@ -56,9 +75,8 @@
       
     .grid-item {padding: 15px;}
 
-    .img {width: 200px; height: 200px;}
+    .img {width: 220px; height: 160px;}
 
     .font {font-family: Arial, Helvetica, sans-serif; font-size: 25px; font-weight: bold;}
-                           
-    
+
 
