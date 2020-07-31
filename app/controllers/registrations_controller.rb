@@ -6,9 +6,12 @@ class RegistrationsController < ApplicationController
     end
 
     def create 
+        #@event= event.each {|event| event}
         @registration=Registration.create(registration_params)
         @current_user.registrations << Registration.create(registration_params)
         redirect_to user_path(@current_user.id)
+   
+
     end
 
     def destroy 

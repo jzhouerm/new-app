@@ -5,8 +5,13 @@ class EventsController < ApplicationController
     def index 
     # if current_user
     @events = Event.search(params[:search])
+     end
     # end
-    end
+
+    
+    
+    
+
 
     def show
     @event = Event.find(params[:id])
