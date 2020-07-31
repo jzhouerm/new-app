@@ -15,10 +15,11 @@
 </form> 
 
 <h2>Attendees:</h2>
-<% @registrations.each do |reg| %>
-<h3><%= link_to reg.user.name, user_path(reg.user) %></h3>
-<% end%>
-<h3> Event created by: <%= link_to @event.user.name, user_path(@event.user)%>
+<ol><% @registrations.each do |reg| %>
+
+<li><h3><%= reg.user.name %></h3></li>
+<% end%></ol>
+<h3> Event created by: <%= @event.user.name%>
 <img class="avatar" src="<%= @event.user.img_url %>" alt="<% @event.user %>"  > </h3>
 <br>
 <br>

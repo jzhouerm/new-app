@@ -6,7 +6,7 @@ Location.destroy_all
 Interest.destroy_all 
 
 puts "seeds destroyed..."
-30.times do
+40.times do
 User.create({name: Faker::Name.name, email: Faker::Internet.email, img_url: "https://www.pngkey.com/png/detail/115-1150152_default-profile-picture-avatar-png-green.png", password: "123"})
 end
 
@@ -29,9 +29,9 @@ Location.create({city: "Online"})
 
 puts "user,location, interest seeds created..."
 
-User.create({name: "Yuliya", email: "yuliya@gmail.com", img_url: "https://www.pngkey.com/png/detail/115-1150152_default-profile-picture-avatar-png-green.png", password: "123"})
-User.create({name: "Jules", email: "jules@gmail.com", img_url: "https://www.pngkey.com/png/detail/115-1150152_default-profile-picture-avatar-png-green.png", password: "123"})
+User.create({name: "Jules Zhou", email: "jules@gmail.com", img_url: "https://www.pngkey.com/png/detail/115-1150152_default-profile-picture-avatar-png-green.png", password: "123"})
 User.create({name: "1", email: "1", img_url: "https://www.pngkey.com/png/detail/115-1150152_default-profile-picture-avatar-png-green.png", password: "1"})
+User.create({name: "Yuliya Yurkevich", email: "yuliya@gmail.com", img_url: "https://www.pngkey.com/png/detail/115-1150152_default-profile-picture-avatar-png-green.png", password: "123"})
 
 #Business
 Event.create({name: "US Real Estate Post 2020 Recession", date: Faker::Date.forward(days: 30), location_id: Location.all.sample.id, description: "Stefan Tsvetkov, MS Financial Engineering, will explore the state of valuations in U.S. private residential real estate, by means of internally derived metrics and external vendor reports. Event Start Time: 6:30PM", user_id: User.all.sample.id, interest_id: Interest.first.id, img_url: "https://secure-content.meetupstatic.com/images/classic-events/490992991/250x140.webp"})
@@ -53,11 +53,12 @@ Event.create({name: "Power Platform Monthly Meeting", date: Faker::Date.forward(
 Event.create({name: "Quantified Self Meetup", date: Faker::Date.forward(days: 30), location_id: Location.all.sample.id, description: "For those that aren't familiar with it, Quantified Self is an international community of users and makers of self-tracking tools who share an interest in “self-knowledge through numbers.” RSVP Now! Event Start Time: 6:30PM", user_id: User.all.sample.id, interest_id: Interest.fourth.id, img_url: "https://secure-content.meetupstatic.com/images/classic-events/490459877/220x140.webp"})
 Event.create({name: "Data Science Meetup", date: Faker::Date.forward(days: 30), location_id: Location.all.sample.id, description: "Meet one of Galvanize’s recent graduates and hear their perspective about the Data Science program! 6:00PM to 7:00PM", user_id: User.all.sample.id, interest_id: Interest.fourth.id, img_url: "https://secure-content.meetupstatic.com/images/classic-events/491426309/220x140.webp"})
 #Health & Wellness
-Event.create({name: "World Peace Meditation", date: Faker::Date.forward(days: 30), location_id: Location.all.sample.id, description: "The WPM is a unique opportunity to be a channel of transformation for the Earth and humanity in this transitional time. The purpose behind the WPM is to expand the vibration of peace in the collective consciousness so that Truth Consciousness can manifest and the current cycle of evolution can continue to unfold. From 8:30 PM to 9:30 PM", user_id: User.all.sample.id, interest_id: Interest.fourth.id, img_url: "https://secure-content.meetupstatic.com/images/classic-events/491455794/220x140.webp"})
-Event.create({name: "Meditation Practice", date: Faker::Date.forward(days: 30), location_id: Location.all.sample.id, description: "This class offers you unique tips and techniques to deepen your meditation practice. From 6:00PM to 7:00PM", user_id: User.all.sample.id, interest_id: Interest.fourth.id, img_url: "https://secure-content.meetupstatic.com/images/classic-events/491534958/220x140.webp"})
+Event.create({name: "World Peace Meditation", date: Faker::Date.forward(days: 30), location_id: Location.all.sample.id, description: "The WPM is a unique opportunity to be a channel of transformation for the Earth and humanity in this transitional time. The purpose behind the WPM is to expand the vibration of peace in the collective consciousness so that Truth Consciousness can manifest and the current cycle of evolution can continue to unfold. From 8:30 PM to 9:30 PM", user_id: User.all.sample.id, interest_id: Interest.fifth.id, img_url: "https://secure-content.meetupstatic.com/images/classic-events/491455794/220x140.webp"})
+Event.create({name: "Meditation Practice", date: Faker::Date.forward(days: 30), location_id: Location.all.sample.id, description: "This class offers you unique tips and techniques to deepen your meditation practice. From 6:00PM to 7:00PM", user_id: User.all.sample.id, interest_id: Interest.fifth.id, img_url: "https://secure-content.meetupstatic.com/images/classic-events/491534958/220x140.webp"})
+Event.create({name: "Friday Feels...", date: Faker::Date.between(from: Date.today, to: Date.today), location_id: Location.last.id, description: "Let's de-stress after a long week with Greg on our last day of Mod-2! Event time: 4PM-5PM Zoom Link:https://wework.zoom.com/j/95522840203?pwd=Q1l2d1lERU4vcUc2ZUFMbVNEQ1M1QT09", user_id: User.last.id, interest_id: Interest.fifth.id, img_url: "https://secure-content.meetupstatic.com/images/classic-events/490744157/440x280.webp"})
 
 
-90.times do
+100.times do
 Registration.create({event_id: Event.all.sample.id, user_id: User.all.sample.id})    
 end
 
