@@ -1,5 +1,5 @@
 
-<h3>Discover events for all the things you love...</h3>
+<h3>Discover events for all the things you ...</h3>
 <%= form_tag(events_path, method: :get) do %>
 <%= text_field_tag(:search, params[:search]) %>
 <%= submit_tag ("Search by City") %>
@@ -10,6 +10,7 @@
 
 <div class="grid-container">
 <%@events.each do |event|%>
+
 <div class="grid-item">
 <div class="font" %><%= link_to event.name, event_path(event) %></div>
 <img  class="img" src="<%= event.img_url %>" alt="<% event.name %>" >
