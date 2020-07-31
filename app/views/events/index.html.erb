@@ -10,6 +10,7 @@
 
 <div class="grid-container">
 <%@events.each do |event|%>
+
 <div class="grid-item">
 <div class="font" %><%= link_to event.name, event_path(event) %></div>
 <img  class="img" src="<%= event.img_url %>" alt="<% event.name %>" >
