@@ -1,13 +1,14 @@
 <h2> All Events that match your interest: </h2>
 <% @interest.events.each do |event| %>
-   <div>
-    <h3> <%= link_to event.name, event_path(event) %> </h3> <br>
+    <h2> <%= link_to event.name, event_path(event) %> </h2>
     <h4> location: <%=event.location.city %> </h4>
      <h4> Date: <%= event.date %></h4>
      <img src="<%= event.img_url %>" alt="<% event.name %>" style= "width:100px; height:100px; border:10;">
      <h4> Description: <%= event.description %></h4>
-     </div>
-     
+     <br>
      <br>
      <% end %>
+     <br>
+     <br>
+     
      
