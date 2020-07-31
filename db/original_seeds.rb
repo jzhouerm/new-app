@@ -32,7 +32,7 @@ Registration.create({event_id: Event.all.sample.id, user_id: User.all.sample.id}
 end
 
 require 'csv'
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'bevents.csv'))
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'events.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.first(4).each do |row|
     g = Event.find_or_initialize_by(name: row['name'].split(',').first )
