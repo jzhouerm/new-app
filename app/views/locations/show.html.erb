@@ -3,9 +3,26 @@
     <% @location.events.each do |event| %>
    
     <h2> <%= link_to event.name, event_path(event) %> </h2> <br>
-    <img src="<%= event.img_url %>" alt="<% event.name %>" style= "width:100px; height:100px; border:10;">
-     <h3> Date: <%= event.date %> </h3>
+    <img class="event-pic" src="<%= event.img_url %>" alt="<% event.name %>" style= "width:220px; height:160px; border:10;">
+     <h3> Date: <%= event.date.strftime("%A, %B %d, %Y") %> </h3>
      <h4> Description: <%= event.description %></h4>
      <br>
      <% end %>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+
      
+
+

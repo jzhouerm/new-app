@@ -1,15 +1,14 @@
 
 
-<h1>You are about to register for an event. Please verify all information below: </h1>
+<h1>Please select the event you wish to register to down below.</h1>
 
-<% if @errors %>
-    <% @errors.each do |error| %> 
-        <%= error %> 
+
+<% if flash[:errors] %>
+<% flash[:errors].each do |x|%>
+        <%= x %> 
         <% end %>
         <% end %> 
         <br>
-        <br>
-
 
     <%= form_for @registration do |f| %>
         <%= f.label :event %>

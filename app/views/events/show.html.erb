@@ -6,8 +6,8 @@
 <h2>Location: <%= link_to @event.location.city, location_path(@event.location) %></h2>
 
 <div class="event-description">
+<p><h2>Event Details: <%= @event.description %></h2></p>
 <img class="event-pic" src="<%= @event.img_url %>" alt="<% @event.name %>" >
-<h2>Details: <%= @event.description %></h2>
 </div>
 
 <form  method="get" action="/registrations/new" >
@@ -20,6 +20,12 @@
 <% end%>
 <h3> Event created by: <%= link_to @event.user.name, user_path(@event.user)%>
 <img class="avatar" src="<%= @event.user.img_url %>" alt="<% @event.user %>"  > </h3>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 

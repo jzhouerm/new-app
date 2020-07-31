@@ -3,12 +3,13 @@ class EventsController < ApplicationController
     skip_before_action :authorized, only: [:index] 
  
     def index 
-    if current_user
+    # if current_user
     @events = Event.search(params[:search])
-    end
+    # end
     end
     
-
+    end
+    
 
     def show
     @event = Event.find(params[:id])
