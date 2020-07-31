@@ -1,15 +1,19 @@
 class EventsController < ApplicationController
 
-    skip_before_action :authorized, only: [:index, :logged_in] 
+    skip_before_action :authorized, only: [:index] 
  
     def index 
+    if current_user
     @events = Event.search(params[:search])
     end
+    end
+    
+
 
     def show
     @event = Event.find(params[:id])
     @registrations = @event.registrations.each do |reg| reg.user.name
-        end
+    end
     end
 
     def new 
