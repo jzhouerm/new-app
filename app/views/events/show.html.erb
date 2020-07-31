@@ -2,7 +2,7 @@
 <h1> <%= @event.name %></h1>
 
 
-<h2> Date: <%= @event.date.strftime("%B %d, %Y at %k:%M") %></h2>
+<h2> Date: <%= @event.date.strftime("%A, %B %d, %Y") %></h2>
 <h2>Location: <%= link_to @event.location.city, location_path(@event.location) %></h2>
 
 <div class="event-description">
