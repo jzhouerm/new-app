@@ -21,5 +21,11 @@ skip_before_action :authorized, only: [:new, :create]
         redirect_to new_session_path
     end
 
+    def reset_page
+        cookies[:page_count] = 0
+        
+        redirect_back fallback_location: events_path
+      end
+
 
 end
