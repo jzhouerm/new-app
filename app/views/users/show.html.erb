@@ -18,7 +18,7 @@
       <% end %>
       <br>
 
-<h2> All events that you created: </h2><br>
+       <h2> All events that you created: </h2><br>
         <% @created_events.each do | event | %>
         <h2><%= link_to event.name, event_path(event) %> </h2>
         <img src="<%= event.img_url %>" alt="<% event.name %>" style= "width:60px; height:60px; ">

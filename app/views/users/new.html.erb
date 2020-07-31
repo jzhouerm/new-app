@@ -21,15 +21,14 @@
 <label>Password Confirmation: </label>
 <%= f.password_field :password_confirmation %> <br>
                                
-<label>Profile Picture</label>
-<input type="file" id="img_url" name="img_url">
+<%= f.label "Profile Picture" %>
+<%= f.text_field :img_url %>       
 <br>
-                                
-
+                               
 <%= f.submit "Sign up" %> 
 
-                                
+                              
 <h2>If you already have an account:  <%= link_to "Log in!", login_path %></h2>
-                            
+                      
 <% end %>
                        
